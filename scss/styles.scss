@@ -1,0 +1,168 @@
+@import "../node_modules/reset.css/reset.css";
+@import "../node_modules/susy/sass/susy";
+@import "../node_modules/breakpoint-sass/stylesheets/breakpoint";
+
+/* GLOBAL STYLE DEFINITIONS */
+$susy: (
+  columns: 12,
+  container: 1140px,
+  gutters: 0.25,
+  global-box-sizing: border-box
+  //debug: (image: show-columns)
+);
+
+$primary-color: #2d3c49;
+$secondary-color: #7d97ad;
+$terciary-color: #02b3e4;
+$base-font-size: 16px;
+$small-screen: 0em 50em;
+$medium-screen: 50em 65em;
+$large-screen: 65em;
+
+body {
+  @include container;
+  font-size: $base-font-size;
+}
+
+header, main, footer {
+  @include span(12);
+}
+
+
+h1 {
+  font-size: 4em;
+}
+
+h2 {
+  font-size: 3em;
+}
+
+h3 {
+  font-size: 2.5em;
+}
+
+h4 {
+  font-size: 2em;
+}
+
+body hr {
+  background-color: $secondary-color;
+  height: 5px;
+}
+
+/* Header Section */
+header {
+
+  margin-top: 3em;
+  margin-bottom: 2em;
+
+  h1, h4 {
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    color: $primary-color;
+  }
+
+  h4 {
+    font-weight: bold;
+  }
+
+  section.heading-image {
+    @include span(2);
+    text-align: right;
+  }
+
+  section.heading-text {
+    @include span(9 last);
+    margin-right: span(1);
+    text-align: right;
+  }
+}
+
+/* Footer Section */
+footer {
+  margin-top: 5em;
+  content: " ";
+}
+
+/* END GLOBAL STYLE DEFINITIONS */
+
+/* PAGE SPECIFIC STYLE DEFINITIONS */
+main {
+  img.banner {
+    @include span(12);
+    height: 400px;
+    margin-top: 2em;
+    margin-bottom: 3em;
+  }
+
+  section.featured {
+
+    .heading-text {
+      color: $secondary-color;
+    }
+
+    article {
+
+      @include span(12);
+      margin-top: 2em;
+
+      &:nth-of-type(1) {
+        margin-top: .5em;
+      }
+
+      img {
+        width: 100%;
+        height: 244px;
+      }
+
+      figcaption {
+        text-align: center;
+        color: $primary-color;
+      }
+
+      h2 {
+        margin-top: .1em;
+        margin-bottom: .1em;
+      }
+
+      @include breakpoint($medium-screen) {
+
+        margin-top: 1em;
+
+        figure {
+          display: table;
+        }
+
+        img {
+          /* @todo figure out width setting */
+          height: auto;
+          display: table-cell;
+          float:none;
+        }
+
+        h2 {
+          margin-top: 0;
+          margin-bottom: 0;
+        }
+
+        figcaption {
+          @include span(9);
+          @include last;
+          display: table-cell;
+          vertical-align: middle;
+          float: none;
+        }
+      }
+
+      @include breakpoint($large-screen) {
+        @include span(4);
+        &:nth-of-type(3) {
+          @include last;
+        }
+
+        margin-top: .5em;
+      }
+    }
+  }
+}
+/* END PAGE SPECIFIC STYLE DEFINITIONS */
