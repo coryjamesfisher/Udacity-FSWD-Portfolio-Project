@@ -45,9 +45,31 @@ h4 {
   font-size: 2em;
 }
 
+a {
+  color: $terciary-color;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
 body hr {
   background-color: $secondary-color;
   height: 5px;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Roboto', sans-serif;
+}
+
+h1, h4 {
+  text-transform: uppercase;
+  color: $primary-color;
+}
+
+h3, h4 {
+  font-weight: bold;
 }
 
 /* Header Section */
@@ -55,16 +77,6 @@ header {
 
   margin-top: 3em;
   margin-bottom: 2em;
-
-  h1, h4 {
-    font-family: 'Roboto', sans-serif;
-    text-transform: uppercase;
-    color: $primary-color;
-  }
-
-  h4 {
-    font-weight: bold;
-  }
 
   section.heading-image {
     @include span(2);
