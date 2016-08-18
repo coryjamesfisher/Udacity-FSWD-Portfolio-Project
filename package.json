@@ -20,7 +20,6 @@
     "gulp-sass": "~2.3.2",
     "gulp": "~3.9.1",
     "gulp-sourcemaps": "~1.6.0",
-    "breakpoint-sass": "~2.7.0",
-    "reset.css": "~2.0.2"
+    "breakpoint-sass": "~2.7.0"
   }
 }
