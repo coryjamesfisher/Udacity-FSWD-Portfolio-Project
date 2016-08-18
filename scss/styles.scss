@@ -93,7 +93,16 @@ header {
 /* Footer Section */
 footer {
   margin-top: 5em;
-  content: " ";
+  margin-bottom: 3em;
+  text-align: left;
+
+  @include breakpoint($medium-screen) {
+    text-align: left;
+  }
+
+  @include breakpoint($large-screen) {
+    text-align: center;
+  }
 }
 
 /* END GLOBAL STYLE DEFINITIONS */
